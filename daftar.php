@@ -15,39 +15,22 @@ include_once("config.php");
 // Process the login form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve the form data
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
     $email = $_POST['email'];
+    $addr = $_POST['alamat'];
     $password = $_POST['password'];
 
     // Prepare the query to fetch user details based on the provided email
-    $query = "SELECT * FROM tbl_user WHERE email = '$email'";
+    $query = "INSERT INTO tbl_user(id_user,nm_user,nohp,password,email,alamat,role) 
+            VALUES(NULL, '$name','$phone','$password','$email','alamat',0)";
     $result = mysqli_query($mysqli, $query);
 
     if ($result) {
-        // Check if a user with the provided email exists
-        if (mysqli_num_rows($result) == 1) {
-            $user = mysqli_fetch_assoc($result);
-            // Verify the password
-            // if (password_verify($password, $user['password'])) {
-                if ($password == $user['password']) {
-                // Set the session variables
-                $_SESSION['email'] = $user['email'];
-                $_SESSION['role'] = $user['role'];
-                $_SESSION['id_user'] = $user['id_user'];
-
-                // Redirect to the homepage or any other desired page
-                if($user['role']==99){
-                    header("Location: index.php");
-                    exit();
-                } else {
-                    header("Location: home.php");
-                    exit();
-                }
-            } else {
-                $errorMessage = "Invalid email or password";
-            }
-        } else {
-            $errorMessage = "Invalid email or password";
-        }
+        $successMessage = "Registration successful. Please login with your credentials.";
+    
+        header("Location: login.php?message=" . urlencode($successMessage));
+                exit();
     } else {
         $errorMessage = "Error occurred. Please try again later.";
     }
@@ -56,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!--Trigger-->
 <html>
 <head>
-    <title>Login</title>
+    <title>Daftar</title>
     <style>
     body {
         background: url("src/style/imgs/RM SEDERHANA.jpg") no-repeat fixed center center;
@@ -151,23 +134,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 <div class="login-block">
-        <h1>Login</h1>
+        <h1>Daftar</h1>
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <input type="text" value="" placeholder="Nama" name="name" id="name" required />
             <input type="email" value="" placeholder="Email" name="email" id="email" required />
+            <input type="text" value="" placeholder="No. Telepon" name="phone" id="phone" required />
+            <input type="text" value="" placeholder="Alamat" name="alamat" id="alamat" required />
             <input type="password" value="" placeholder="Password" name="password" id="password" required />
-            <button type="submit">Masuk</button>
-            <br><br>
-            <center><a href="daftar.php">Daftar</a></center>
+            <button type="submit">Daftar</button>
         </form>
         <?php if (isset($errorMessage)): ?>
             <p><?php echo $errorMessage; ?></p>
         <?php endif; ?>
-        <?php
-            if(isset($_GET['message'])) {
-                $msg = $_GET['message'];
-                echo "<p>$msg</p>";
-            }
-        ?>
     </div>
 </body>
 </html>

@@ -83,7 +83,7 @@
         <h2>Atur pesanan</h2>
         <div class="jumlah">
           <label for="">JUMLAH PESANAN</label>
-          <input type="number"name="qty" id="qtyInput"/>
+          <input type="number"name="qty" id="qtyInput" required/>
         </div><br>
         <div class="note">
             <label for="">CATATAN PESANAN</label>

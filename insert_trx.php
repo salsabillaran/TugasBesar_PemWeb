@@ -16,7 +16,7 @@
             $result = mysqli_query($mysqli, "INSERT INTO tbl_transaksi(id_transaksi,tgl_transaksi,rp_total,note_user,status,id_method,id_user,id_produk,qty) 
                                             VALUES(NULL, '$date',$rpTotal,'$note',0,1,$id_user, $id,$qty)");
             // Redirect to homepage to display updated user in list
-            header("Location: home.php");
+            header("Location: index_user.php");
         // }
     }
 ?>

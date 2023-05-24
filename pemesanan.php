@@ -82,6 +82,11 @@
 	<div class="about-section-box">
     <div class="container">
         <?php
+            if($_SESSION['role'] == 0) {
+                echo "<h3><a href='index_user.php' style='color:blue;'>Lihat Riwayat Transaksi</a></h1><br><br>";
+            }
+        ?>
+        <?php
         // Establish a database connection
         include_once("config.php");
 
@@ -100,22 +105,29 @@
                 $price = $row['rp_harga'];
                 $stock = $row['stok'];
                 $description = $row['deskripsi'];
+                $image = $row['img_url']; // Assuming the image URL is stored in the 'image' column
+
+                if (empty($image)) {
+                    $image = 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'; // Set a default placeholder URL
+                }
 
                 // Generate the HTML code for each product
                 echo '<div class="col-lg-4 col-md-6 col-sm-12">';
-                    echo '<div class="card">';
-                    echo '<div class="card-body">';
-                    echo '<h3 class="card-title">' . $name . '</h3>';
-                    echo '<p class="card-text"><strong>Harga:</strong> ' . $price . '</p>';
-                    echo '<p class="card-text"><strong>Stok:</strong> ' . $stock . '</p>';
-                    echo '<p class="card-text"><strong>Deskripsi:</strong> ' . $description . '</p>';
-                    echo '<a href="product_detail.php?id_produk=' . $id . '" class="btn btn-primary">Lihat Detail</a>';
-                    echo '</div>';
-                    echo '</div>';
-                    echo '</div>';
+                echo '<div class="card">';
+                echo '<img src="' . $image . '" class="card-img-top" alt="' . $name . '">';
+                echo '<div class="card-body">';
+                echo '<h3 class="card-title">' . $name . '</h3>';
+                echo '<p class="card-text"><strong>Harga:</strong> ' . $price . '</p>';
+                echo '<p class="card-text"><strong>Stok:</strong> ' . $stock . '</p>';
+                echo '<p class="card-text"><strong>Deskripsi:</strong> ' . $description . '</p>';
+                echo '<a href="product_detail.php?id_produk=' . $id . '" class="btn btn-primary">Lihat Detail</a>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
             }
 
             echo '</div>';
+
         } else {
             echo 'No products found.';
         }
