@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Arbutus+Slab");
+@import url("https://fonts.googleapis.com/css?family=Athiti:400,500,600");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+	background-image: url(../imgs/RM\ SEDERHANA.jpg);
+  color: #161616;
+  font-size: 15px;
+  font-family: "Athiti", sans-serif;
+  line-height: 1.80857;
+}
+/* navbar start */
+nav {
+  width: 100%;
+  background-color: #ffffff;
+}
+nav .nav-container {
+  padding: 1.4rem;
+  display: flex;
+  justify-content: space-around;
+}
+nav .nav-container a {
+  text-decoration: none;
+  color: #1f1f1f;
+  text-decoration: none;
+  outline: none;
+  font-size: 18px;
+}
+nav .nav-container ul {
+  display: flex;
+  gap: 3rem;
+}
+nav .nav-container ul li {
+  list-style: none;
+}
+/* navbar end */
+
+/* content start */
+.container{
+	background-color: #ffffffd8;
+	padding: 20px;
+	margin: 20px auto;
+	width: 95%;
+	display: flex;
+	border-radius: 10px;
+	justify-content: space-evenly;
+}
+.container .img-produk{
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+}
+.container .img-produk .thumbnail img{
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 0 4px black;
+}
+
+.container .desc-produk{
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.container .pesanan{
+	width: 25%;
+	display: flex;
+  background-color: #ffffff;
+	flex-direction: column;
+	border: none;
+	box-shadow: 0 0 4px black;
+	border-radius: 10px;
+	padding: 20px;
+	justify-content: space-between;
+}
+.container .pesanan h2{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.container .pesanan .jumlah{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.container .pesanan .jumlah input{
+	width: 20%;
+	text-align: center;
+	padding: 5px;
+	border: none;
+	outline: none;
+	border-bottom: 3px solid rgba(0, 0, 255, 0.493);
+	border-radius: 5px;
+}
+.container .pesanan .note{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.container .pesanan .note input{
+	margin-bottom: 10px;
+	outline: none;
+	width: 100%;
+	padding: 10px 0;
+	border: none;
+	border-bottom: 3px solid rgba(0, 0, 255, 0.493);
+	border-radius: 5px;
+}
+.container .pesanan .note p{
+	width: 100%;
+	background-color: blue;
+	padding: 5px;
+	text-align: center;
+	border-radius: 5px;
+	color: #ffffff;
+}
+.container .pesanan .estimasi{
+	display: flex;
+	justify-content: space-between;
+}
+.container .pesanan .btn-chart button{
+	padding: 10px;
+	width: 100%;
+	background-color: blue;
+	color: #ffffff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.container .pesanan .btn-beli button{
+	padding: 10px;
+	width: 100%;
+	background-color: blue;
+	color: #ffffff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+/* content end */

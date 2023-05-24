@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css?family=Arbutus+Slab");
+@import url("https://fonts.googleapis.com/css?family=Athiti:400,500,600");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+  color: #161616;
+  font-size: 15px;
+  font-family: "Athiti", sans-serif;
+  line-height: 1.80857;
+  background-image: url(../imgs/download.jpg);
+  background-position: center;
+}
+/* navbar start */
+nav {
+  width: 100%;
+  background-color: #ffffff;
+}
+nav .nav-container {
+  padding: 1.4rem;
+  display: flex;
+  justify-content: space-around;
+}
+nav .nav-container a {
+  text-decoration: none;
+  color: #1f1f1f;
+  text-decoration: none;
+  outline: none;
+  font-size: 18px;
+}
+nav .nav-container ul {
+  display: flex;
+  gap: 3rem;
+}
+nav .nav-container ul li {
+  list-style: none;
+}
+/* Keranjang Start */
+.cart{
+  width: 98%;
+  background-color: #ffffffd8;
+  display: flex;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 4px black;
+  flex-direction: column;
+  margin: 20px auto;
+}
+.cart .isi{
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart .isi img{
+  max-width: 100px;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 1px solid rgb(131, 131, 131);
+  box-shadow: 0 0 4px black;
+}
+/* Keranjang End */
