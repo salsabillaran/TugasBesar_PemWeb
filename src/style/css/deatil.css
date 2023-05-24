@@ -7,7 +7,7 @@
 }
 body {
   box-sizing: border-box;
-	background-image: url(../imgs/RM\ SEDERHANA.jpg);
+	background-image: url("../imgs/RM SEDERHANA.jpg");
   color: #161616;
   font-size: 15px;
   font-family: "Athiti", sans-serif;
