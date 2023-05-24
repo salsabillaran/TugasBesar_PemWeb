@@ -82,8 +82,10 @@
 	<div class="about-section-box">
     <div class="container">
         <?php
-            if($_SESSION['role'] == 0) {
-                echo "<h3><a href='index_user.php' style='color:blue;'>Lihat Riwayat Transaksi</a></h1><br><br>";
+            if(isset($_SESSION['role'])){
+                if($_SESSION['role'] == 0) {
+                    echo "<h3><a href='index_user.php' style='color:blue;'>Lihat Riwayat Transaksi</a></h1><br><br>";
+                }
             }
         ?>
         <?php
@@ -135,8 +137,6 @@
     </div>
 </div>
 
-	
-	
 	<!-- Contact info -->
 	<div class="contact-imfo-box">
 		<div class="container">
@@ -163,6 +163,7 @@
 			</div>
 		</div>
 	</div>
+    
 	<footer class="footer-area bg-f">
 		<div class="copyright">
 			<div class="container">
