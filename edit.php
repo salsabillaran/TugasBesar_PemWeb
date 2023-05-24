@@ -41,7 +41,7 @@ while($user_data = mysqli_fetch_array($result))
 </head>
  
 <body>
-    <a href="index.php">Home</a>
+    <a href="index.php">Back</a>
     <br/><br/>
     
     <form name="update_user" method="post" action="edit.php">

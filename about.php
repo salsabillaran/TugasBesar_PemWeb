@@ -11,17 +11,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="shortcut icon" href="style/imgs/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="style/imgs/apple-touch-icon.png">
+    <link rel="shortcut icon" href="src/style/css/imgs/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="src/style/css/imgs/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="style/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="src/style/css/bootstrap.min.css">    
 	<!-- Site CSS -->
-    <link rel="stylesheet" href="style/css/style.css">    
+    <link rel="stylesheet" href="src/style/css/style.css">    
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="style/css/responsive.css">
+    <link rel="stylesheet" href="src/style/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style/css/custom.css">
+    <link rel="stylesheet" href="src/style/css/custom.css">
 
 </head>
 
@@ -30,7 +30,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="home.html">
+				<a class="navbar-brand" href="home.php">
 					<p>RM Masakan Padang</p>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,10 +38,27 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href="home.html">Beranda</a></li>
-						<li class="nav-item active"><a class="nav-link" href="about.html">Tentang Kami</a></li>
-						<li class="nav-item"><a class="nav-link" href="pemesanan.html">Pesan</a></li>
-						<li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+						<li class="nav-item"><a class="nav-link" href="home.php">Beranda</a></li>
+						<li class="nav-item active"><a class="nav-link" href="about.php">Tentang Kami</a></li>
+						<li class="nav-item"><a class="nav-link" href="pemesanan.php">Pesan</a></li>
+						<?php
+                        session_start();
+                            // Check if the user is logged in
+                            if(isset($_SESSION['email'])) {
+                                // User is logged in, hide the login menu
+                                // $loginMenuStyle = 'display: none;';
+                                if($_SESSION['role']==99) {
+                                    echo "<li class='nav-item' ><a class='nav-link' href='index.php'>Dashboard</a></li>";
+                                } else {
+                                    
+                                    echo "<li class='nav-item' ><a class='nav-link' href='logout.php'>Logout</a></li>";
+                                }
+                            } else {
+                                // User is not logged in, show the login menu
+                                // $loginMenuStyle = '';
+                                echo "<li class='nav-item' ><a class='nav-link' href='login.php'>Login</a></li>";
+                            }
+                        ?>
 					</ul>
 				</div>
 			</div>
@@ -66,7 +83,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-6">
-					<img src="style/imgs/about-img.jpg" alt="" class="img-fluid">
+					<img src="src/style/imgs/about-img.jpg" alt="" class="img-fluid">
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<div class="inner-column">
@@ -128,16 +145,16 @@
 	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
 	<!-- JS FILES -->
-	<script src="style/js/jquery-3.2.1.min.js"></script>
-	<script src="style/js/popper.min.js"></script>
-	<script src="style/js/bootstrap.min.js"></script>
+	<script src="src/style/js/jquery-3.2.1.min.js"></script>
+	<script src="src/style/js/popper.min.js"></script>
+	<script src="src/style/js/bootstrap.min.js"></script>
     <!-- PLUGINS -->
-	<script src="style/js/jquery.superslides.min.js"></script>
-	<script src="style/js/images-loded.min.js"></script>
-	<script src="style/js/isotope.min.js"></script>
-	<script src="style/js/baguetteBox.min.js"></script>
-	<script src="style/js/form-validator.min.js"></script>
-    <script src="style/js/contact-form-script.js"></script>
-    <script src="style/js/custom.js"></script>
+	<script src="src/style/js/jquery.superslides.min.js"></script>
+	<script src="src/style/js/images-loded.min.js"></script>
+	<script src="src/style/js/isotope.min.js"></script>
+	<script src="src/style/js/baguetteBox.min.js"></script>
+	<script src="src/style/js/form-validator.min.js"></script>
+    <script src="src/style/js/contact-form-script.js"></script>
+    <script src="src/style/js/custom.js"></script>
 </body>
 </html>
