@@ -10,9 +10,7 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-if($_SESSION['role']==0) {
-    header("Location: index_user.php");
-}
+$id_user = $_SESSION['id_user'];
  
 // Fetch all users data from database
 $result = mysqli_query($mysqli, "SELECT * FROM tbl_produk ORDER BY id_produk DESC");
@@ -23,6 +21,7 @@ $result2 = mysqli_query($mysqli, "SELECT  tbl_user.email, tbl_user.nohp,
                                      FROM tbl_transaksi 
                                      INNER JOIN tbl_user ON tbl_transaksi.id_user = tbl_user.id_user
                                      INNER JOIN tbl_produk ON tbl_transaksi.id_produk = tbl_produk.id_produk
+                                     WHERE tbl_transaksi.id_user = $id_user
                                      ORDER BY id_transaksi DESC");
 ?>
  
@@ -70,7 +69,7 @@ $result2 = mysqli_query($mysqli, "SELECT  tbl_user.email, tbl_user.nohp,
     <header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="index.php">
+				<a class="navbar-brand" href="index_user.php">
 					<p>Dashboard</p>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,7 +78,7 @@ $result2 = mysqli_query($mysqli, "SELECT  tbl_user.email, tbl_user.nohp,
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item"><a class="nav-link" href="home.php">Beranda</a></li>
-						<li class="nav-item"><a class="nav-link" href="add.php">Tambah Produk</a></li>
+						<!-- <li class="nav-item"><a class="nav-link" href="add.php">Tambah Produk</a></li> -->
 						<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
 					</ul>
 				</div>
@@ -95,22 +94,22 @@ $result2 = mysqli_query($mysqli, "SELECT  tbl_user.email, tbl_user.nohp,
         <table width='100%' border=1>
     
             <tr>
-                <th>Pemesan</th>
-                <th>No. Kontak</th>
+                <!-- <th>Pemesan</th>
+                <th>No. Kontak</th> -->
                 <th>Tanggal</th> 
                 <th>Produk</th>
                 <th>Harga</th>
                 <th>Jumlah</th> 
                 <th>Total Bayar</th>
-                <th>Note User</th> 
+                <th>Note</th> 
                 <th>Status</th>
                 <th>Action</th>
             </tr>
             <?php  
             while($user_data2 = mysqli_fetch_array($result2)) {         
                 echo "<tr>";
-                echo "<td>".$user_data2['email']."</td>";
-                echo "<td>".$user_data2['nohp']."</td>";
+                // echo "<td>".$user_data2['email']."</td>";
+                // echo "<td>".$user_data2['nohp']."</td>";
                 echo "<td>".$user_data2['tgl_transaksi']."</td>";
                 echo "<td>".$user_data2['nm_produk']."</td>";
                 echo "<td>".$user_data2['rp_harga']."</td>";
@@ -119,14 +118,14 @@ $result2 = mysqli_query($mysqli, "SELECT  tbl_user.email, tbl_user.nohp,
                 echo "<td>".$user_data2['note_user']."</td>";  
                 if($user_data2['status']==0) {
                     
-                    echo "<td class='status-processed'>Diproses</td>";  
+                    echo "<td><p class='status-processed'>Diproses</p></td>";  
                     echo "<td><a href='approve.php?id=$user_data2[id_transaksi]&status=1'>Selesai</a> | <a href='approve.php?id=$user_data2[id_transaksi]&status=2'>Batal</a></td></tr>";
                 } else if($user_data2['status']==1) {
                     
-                    echo "<td class='status-done'>Selesai</td>";  
+                    echo "<td><p class='status-done'>Selesai</p></td>";  
                     echo "<td></td>";
                 } else {
-                    echo "<td class='status-invalid'>Batal</td>"; 
+                    echo "<td><p class='status-invalid'>Batal</p></td>"; 
                     echo "<td></td>"; 
                 }
                         
@@ -136,25 +135,7 @@ $result2 = mysqli_query($mysqli, "SELECT  tbl_user.email, tbl_user.nohp,
     </div>
     </section>
 
-    <div class="about-section-box">
-    <div class="container">
-    <h1>Data Produk</h1>
-        <table width='100%' border=1>
     
-            <tr>
-                <th>Nama Produk</th> <th>Harga Produk</th> <th>Stok Produk</th> <th>Action</th>
-            </tr>
-            <?php  
-            while($user_data = mysqli_fetch_array($result)) {         
-                echo "<tr>";
-                echo "<td>".$user_data['nm_produk']."</td>";
-                echo "<td>".$user_data['rp_harga']."</td>";
-                echo "<td>".$user_data['stok']."</td>";    
-                echo "<td><a href='edit.php?id=$user_data[id_produk]'>Edit</a> | <a href='delete.php?id=$user_data[id_produk]'>Delete</a></td></tr>";        
-            }
-            ?>
-        </table>
-    </div>
     </section>
 </body>
 </html>
