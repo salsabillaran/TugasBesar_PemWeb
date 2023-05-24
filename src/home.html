@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- Site Metas -->
+    <title>Rumah Makan Padang</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{{ asset('yamifood') }}/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('yamifood') }}/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('yamifood') }}/css/bootstrap.min.css">
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="{{ asset('yamifood') }}/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ asset('yamifood') }}/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('yamifood') }}/css/custom.css">
+
+
+</head>
+
+<body>
+	<!-- header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="/home">
+					<p>Rumah Makan Padang</p>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="{{ asset('yamifood') }}/home">Beranda</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ asset('yamifood') }}/order">Pesan makanan</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ asset('yamifood') }}/tentang">Tentang Kami</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ asset('yamifood') }}/reservasi">Reservasi</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+	<!-- slides -->
+	<div id="slides" class="cover-slides">
+		<ul class="slides-container">
+			<li class="text-center">
+				<img src="yamifood\images\162875b9-af53-4fec-a7ec-67cb6b716867.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Rumah Makan Padang <br> Masakan Padang</strong></h1>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="slides-navigation">
+			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+		</div>
+	</div>
+	<!-- End slides -->
+
+	<!-- Tentang Kami -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<img src="images/about-img.jpg" alt="" class="img-fluid">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="inner-column">
+						<h1><span>SEJARAH</span></h1>
+						<p>Pada tahun 1999, seorang ibu bernama Siti membuka rumah makan Padang. Dengan masakan lezatnya, reputasi rumah makan Siti Padang tumbuh pesat. Kelezatan dan kualitas masakan membuatnya populer di kota itu. Dalam beberapa tahun, rumah makan Siti Padang menjadi salah satu tempat makan paling dicari. Dengan kerja keras dan semangat, bisnisnya terus berkembang. Hingga saat ini, rumah makan Siti Padang masih berjalanan dan tetap menjadi ikon kuliner kota tersebut.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Galeri -->
+	<div class="gallery-box">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Galeri</h2>
+					</div>
+				</div>
+			</div>
+			<div class="tz-gallery">
+				<div class="row">
+					<div class="col-sm-12 col-md-4 col-lg-3">
+						<a class="lightbox" href="{{ asset('yamifood') }}images\berapa-kalori-nasi-padang.jpg">
+							<img class="img-fluid" src="images\berapa-kalori-nasi-padang.jpg" alt="Galeri Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<a class="lightbox" href="{{ asset('yamifood') }}/images/gallery-img-02.jpg">
+							<img class="img-fluid" src="images/gallery-img-02.jpg" alt="Galeri Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<a class="lightbox" href="{{ asset('yamifood') }}/images/gallery-img-03.jpg">
+							<img class="img-fluid" src="images/gallery-img-03.jpg" alt="Galeri Images">
+						</a>
+					</div>
+					<div class="col-sm-12 col-md-4 col-lg-3">
+						<a class="lightbox" href="{{ asset('yamifood') }}/images/gallery-img-04.jpg">
+							<img class="img-fluid" src="images/gallery-img-04.jpg" alt="Galeri Images">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Galeri -->
+
+	<!-- Customer Reviews -->
+	<div class="customer-reviews-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Customer Reviews</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 mr-auto ml-auto text-center">
+					<div id="reviews" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner mt-4">
+							<div class="carousel-item text-center active">
+								<div class="img-box p-1 border rounded-circle m-auto">
+									<img class="d-block w-100 rounded-circle" src="images/placeholder.png" alt="">
+								</div>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Deijals Channel</strong></h5>
+								<p class="m-0 pt-3">Makanan nya enak. Khas Mandailing. Apalagi daun singkong tumbuk nya. Mantab kali</p>
+							</div>
+							<div class="carousel-item text-center">
+								<div class="img-box p-1 border rounded-circle m-auto">
+									<img class="d-block w-100 rounded-circle" src="images/placeholder.png" alt="">
+								</div>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Ning Nong</strong></h5>
+								<p class="m-0 pt-3">Untuk orang dari Sumatra Utara yg rindu masakan rumah boleh dicoba.</p>
+							</div>
+							<div class="carousel-item text-center">
+								<div class="img-box p-1 border rounded-circle m-auto">
+									<img class="d-block w-100 rounded-circle" src="images/placeholder.png" alt="">
+								</div>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Alamsyah SH</strong></h5>
+								<p class="m-0 pt-3">Ikan patin balado nya,  patut dicoba disini, maknyuzzzz...</p>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#reviews" role="button" data-slide="prev">
+							<i class="fa fa-angle-left" aria-hidden="true"></i>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#reviews" role="button" data-slide="next">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<span class="sr-only">Next</span>
+						</a>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Customer Reviews -->
+
+	<!-- Contact info -->
+	<div class="contact-imfo-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md">
+					<i class="fa fa-volume-control-phone"></i>
+					<div class="overflow-hidden">
+						<h4>No. Telepon</h4>
+						<p class="lead">
+							+62 22 - 543-0102
+						</p>
+					</div>
+				</div>
+
+				<div class="col-md">
+					<i class="fa fa-map-marker"></i>
+					<div class="overflow-hidden">
+						<h4>Alamat</h4>
+						<p class="lead">
+							Jl. Cibaduyut No.47, Kb. Lega, Kec. Bojongloa Kidul, Kota Bandung, Jawa Barat 40329
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<footer>
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+	<!-- JS FILES -->
+	<script src="{{ asset('yamifood') }}/js/jquery-3.2.1.min.js"></script>
+	<script src="{{ asset('yamifood') }}/js/popper.min.js"></script>
+	<script src="{{ asset('yamifood') }}/js/bootstrap.min.js"></script>
+    <!-- PLUGINS -->
+	<script src="{{ asset('yamifood') }}/js/jquery.superslides.min.js"></script>
+	<script src="{{ asset('yamifood') }}/js/images-loded.min.js"></script>
+	<script src="{{ asset('yamifood') }}/js/isotope.min.js"></script>
+	<script src="{{ asset('yamifood') }}/js/baguetteBox.min.js"></script>
+	<script src="{{ asset('yamifood') }}/js/form-validator.min.js"></script>
+    <script src="{{ asset('yamifood') }}/js/contact-form-script.js"></script>
+    <script src="{{ asset('yamifood') }}/js/custom.js"></script>
+</body>
+</html>
